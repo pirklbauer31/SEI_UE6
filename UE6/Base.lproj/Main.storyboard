@@ -15,19 +15,22 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleAspectFill" id="qvv-4l-Vie">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="229"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="231"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1308977754001" translatesAutoresizingMaskIntoConstraints="NO" id="nD3-lg-JkH">
-                                    <frame key="frameInset" minX="67" minY="-42" width="240" height="128"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1308977754001" translatesAutoresizingMaskIntoConstraints="NO" id="j6E-t4-xen"/>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="j6E-t4-xen" secondAttribute="trailing" id="1bT-db-ITf"/>
+                                <constraint firstItem="j6E-t4-xen" firstAttribute="top" secondItem="qvv-4l-Vie" secondAttribute="top" id="50S-8I-eso"/>
+                                <constraint firstAttribute="bottom" secondItem="j6E-t4-xen" secondAttribute="bottom" id="VW8-cc-LG4"/>
+                                <constraint firstItem="j6E-t4-xen" firstAttribute="leading" secondItem="qvv-4l-Vie" secondAttribute="leading" id="jwt-RN-j0h"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="kXk-Oj-LGq" style="IBUITableViewCellStyleDefault" id="d1P-9Q-ypE" customClass="Cell" customModule="UE6" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="257" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="259" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d1P-9Q-ypE" id="pXa-hA-LbZ">
                                     <frame key="frameInset" width="375" height="43"/>
