@@ -12,6 +12,9 @@
 		3F1988CD1E407D680081BBDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1988CB1E407D680081BBDD /* Main.storyboard */; };
 		3F1988CF1E407D680081BBDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1988CE1E407D680081BBDD /* Assets.xcassets */; };
 		3F1988D21E407D680081BBDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1988D01E407D680081BBDD /* LaunchScreen.storyboard */; };
+		3F1988DA1E408CBF0081BBDD /* WiggleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1988D91E408CBF0081BBDD /* WiggleController.swift */; };
+		3F1C38241E409C87004BC255 /* ResizeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C38231E409C86004BC255 /* ResizeController.swift */; };
+		3F1C38261E40C314004BC255 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C38251E40C314004BC255 /* Cell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		3F1988CE1E407D680081BBDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F1988D11E407D680081BBDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F1988D31E407D680081BBDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F1988D91E408CBF0081BBDD /* WiggleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WiggleController.swift; sourceTree = "<group>"; };
+		3F1C38231E409C86004BC255 /* ResizeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizeController.swift; sourceTree = "<group>"; };
+		3F1C38251E40C314004BC255 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +63,12 @@
 				3F1988C71E407D680081BBDD /* AppDelegate.swift */,
 				3F1988C91E407D680081BBDD /* ViewController.swift */,
 				3F1988CB1E407D680081BBDD /* Main.storyboard */,
+				3F1C38231E409C86004BC255 /* ResizeController.swift */,
+				3F1C38251E40C314004BC255 /* Cell.swift */,
 				3F1988CE1E407D680081BBDD /* Assets.xcassets */,
 				3F1988D01E407D680081BBDD /* LaunchScreen.storyboard */,
 				3F1988D31E407D680081BBDD /* Info.plist */,
+				3F1988D91E408CBF0081BBDD /* WiggleController.swift */,
 			);
 			path = UE6;
 			sourceTree = "<group>";
@@ -137,7 +146,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F1988CA1E407D680081BBDD /* ViewController.swift in Sources */,
+				3F1988DA1E408CBF0081BBDD /* WiggleController.swift in Sources */,
+				3F1C38261E40C314004BC255 /* Cell.swift in Sources */,
 				3F1988C81E407D680081BBDD /* AppDelegate.swift in Sources */,
+				3F1C38241E409C87004BC255 /* ResizeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +311,7 @@
 				3F1988D81E407D680081BBDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
