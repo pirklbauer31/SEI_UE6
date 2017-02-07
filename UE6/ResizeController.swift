@@ -29,18 +29,18 @@ class ResizeController: UIViewController, UITableViewDelegate, UITableViewDataSo
         table.tableHeaderView = nil
         table.addSubview(headerView)
         
-        //let effectiveHeight = kTableHeaderHeight-kTableHeaderCutAway/2
+        let effectiveHeight = kTableHeaderHeight-kTableHeaderCutAway/2
         
-        table.contentInset=UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right:0)
-        table.contentOffset = CGPoint(x: 0, y: -kTableHeaderHeight)
-        //table.contentInset=UIEdgeInsets(top: effectiveHeight, left: 0, bottom: 0, right:0)
-        //table.contentOffset = CGPoint(x: 0, y: -effectiveHeight)
+        //table.contentInset=UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right:0)
+        //table.contentOffset = CGPoint(x: 0, y: -kTableHeaderHeight)
+        table.contentInset=UIEdgeInsets(top: effectiveHeight, left: 0, bottom: 0, right:0)
+        table.contentOffset = CGPoint(x: 0, y: -effectiveHeight)
 
         
-        //headerMaskLayer = CAShapeLayer()
-       // headerMaskLayer.fillColor = UIColor.black.cgColor
+        headerMaskLayer = CAShapeLayer()
+        headerMaskLayer.fillColor = UIColor.black.cgColor
         
-        //headerView.layer.mask = headerMaskLayer
+        headerView.layer.mask = headerMaskLayer
         
         updateHeaderView()
         
@@ -52,16 +52,24 @@ class ResizeController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func updateHeaderView(){
         
-        //let effectiveHeight = kTableHeaderHeight-kTableHeaderCutAway/2
-        var headerRect = CGRect(x: 0, y: -kTableHeaderHeight, width: table.bounds.width, height: kTableHeaderHeight)
-        //var headerRect = CGRect(x: 0, y: -effectiveHeight, width: table.bounds.width, height: kTableHeaderHeight)
+        let effectiveHeight = kTableHeaderHeight-kTableHeaderCutAway/2
+        //var headerRect = CGRect(x: 0, y: -kTableHeaderHeight, width: table.bounds.width, height: kTableHeaderHeight)
+        var headerRect = CGRect(x: 0, y: -effectiveHeight, width: table.bounds.width, height: kTableHeaderHeight)
         if table.contentOffset.y < -kTableHeaderHeight{
             headerRect.origin.y = table.contentOffset.y
-            headerRect.size.height = -table.contentOffset.y
-            //headerRect.size.height = -table.contentOffset.y + kTableHeaderCutAway/2
+            //headerRect.size.height = -table.contentOffset.y
+            headerRect.size.height = -table.contentOffset.y + kTableHeaderCutAway/2
         }
         
         headerView.frame = headerRect
+        
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: 0, y: 0))
+        path.move(to: CGPoint(x: 0, y: 0))
+        path.addLine(to: CGPoint(x: headerRect.width, y:0))
+        path.addLine(to: CGPoint(x: headerRect.width, y: headerRect.height))
+        path.addLine(to: CGPoint(x:0, y: headerRect.height-kTableHeaderCutAway))
+        headerMaskLayer?.path = path.cgPath
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -93,7 +101,9 @@ class ResizeController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return tableContent.count
     }
     
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     /*
     // MARK: - Navigation
